@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sayuth | Android Developer & IT Specialist</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6366f1',
+                        secondary: '#8b5cf6',
+                        neumorph: '#e0e5ec',
+                        neumorphDark: '#2b2d31'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../index.css">
+</head>
+<body class="neumorph-bg text-gray-700 transition-colors duration-300">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 p-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <a href="#home" class="text-2xl font-bold neumorph-text-dark">
+                        <span class="text-primary">SAYUTH </span><span class="text-secondary">Dev <i class="fa-solid fa-code"></i></span>
+                    </a>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#home" class="neumorph-text-dark font-medium hover:text-primary transition-colors">Home</a>
+                    <a href="#about" class="neumorph-text-dark font-medium hover:text-primary transition-colors">About</a>
+                    <a href="#projects" class="neumorph-text-dark font-medium hover:text-primary transition-colors">Projects</a>
+                    <a href="#skills" class="neumorph-text-dark font-medium hover:text-primary transition-colors">Skills</a>
+                    <a href="#contact" class="neumorph-text-dark font-medium hover:text-primary transition-colors">Contact</a>
+                    
+                    <button id="theme-toggle" class="neumorph-button flex items-center">
+                        <i class="fas fa-moon mr-2"></i>
+                        <span>Dark</span>
+                    </button>
+                </div>
+                
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="neumorph-button p-3">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden mt-4 neumorph-card mx-6 p-6">
+            <div class="flex flex-col space-y-4">
+                <a href="#home" class="neumorph-text-dark font-medium">Home</a>
+                <a href="#about" class="neumorph-text-dark font-medium">About</a>
+                <a href="#projects" class="neumorph-text-dark font-medium">Projects</a>
+                <a href="#skills" class="neumorph-text-dark font-medium">Skills</a>
+                <a href="#contact" class="neumorph-text-dark font-medium">Contact</a>
+                <button id="mobile-theme-toggle" class="neumorph-button w-full flex justify-center">
+                    <i class="fas fa-moon mr-2"></i>
+                    <span>Dark Mode</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Terms of Service -->
+    <section id="terms" class="py-20">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="neumorph-card p-8">
+                <h2 class="text-2xl md:text-3xl font-bold neumorph-text-dark mb-8 text-center">Terms of Service</h2>
+                
+                <div class="space-y-6 neumorph-text leading-relaxed text-sm">
+                    <div>
+                        <h3 class="text-lg font-semibold neumorph-text-dark mb-3">1. Acceptance of Terms</h3>
+                        <p>By accessing and using this website and services, you accept and agree to be bound by the terms and provisions of this agreement.</p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-lg font-semibold neumorph-text-dark mb-3">2. Use License</h3>
+                        <p>Permission is granted to temporarily download one copy of the materials (information or software) on Sayuth  's website for personal, non-commercial use only.</p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-lg font-semibold neumorph-text-dark mb-3">3. Disclaimer</h3>
+                        <p>The materials on Sayuth  's website are provided on an 'as is' basis. Sayuth   makes no warranties, expressed or implied, and hereby disclaims all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property.</p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-lg font-semibold neumorph-text-dark mb-3">4. Limitations</h3>
+                        <p>In no event shall Sayuth   or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on Sayuth  's website.</p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-lg font-semibold neumorph-text-dark mb-3">5. Revisions and Errata</h3>
+                        <p>The materials appearing on Sayuth  's website may include technical, typographical, or photographic errors. Sayuth   does not warrant that any of the materials on its website are accurate, complete, or current.</p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-lg font-semibold neumorph-text-dark mb-3">6. Links</h3>
+                        <p>Sayuth   has not reviewed all of the sites linked to its website and is not responsible for the contents of any such linked site. The inclusion of any link does not imply endorsement by Sayuth   of the site.</p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-lg font-semibold neumorph-text-dark mb-3">7. Site Terms of Use Modifications</h3>
+                        <p>Sayuth   may revise these terms of use for its website at any time without notice. By using this website you are agreeing to be bound by the then current version of these terms of use.</p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-lg font-semibold neumorph-text-dark mb-3">8. Governing Law</h3>
+                        <p>These terms and conditions are governed by and construed in accordance with the laws of California and you irrevocably submit to the exclusive jurisdiction of the courts in that State or location.</p>
+                    </div>
+                </div>
+                
+                <div class="mt-8 pt-6 border-t border-gray-200 neumorph-text text-xs text-center">
+                    <p>Last updated: January 2, 2026</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ 
+    <!-- Footer -->
+    <footer class="py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold neumorph-text-dark mb-4">
+                        <span class="text-primary">SAYUTH </span><span class="text-secondary">Dev <i class="fa-solid fa-code"></i></span>
+                    </h3>
+                    <p class="neumorph-text leading-relaxed text-sm">
+                        Professional Android development and IT solutions for businesses of all sizes.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-semibold neumorph-text-dark mb-4">Quick Links</h4>
+                    <ul class="space-y-2 neumorph-text text-sm">
+                        <li><a href="../index.html#home" class="hover:text-primary transition-colors">Home</a></li>
+                        <li><a href="../index.html#about" class="hover:text-primary transition-colors">About</a></li>
+                        <li><a href="../index.html#projects" class="hover:text-primary transition-colors">Projects</a></li>
+                        <li><a href="../index.html#contact" class="hover:text-primary transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold neumorph-text-dark mb-4">Legal</h4>
+                    <ul class="space-y-2 neumorph-text text-sm">
+                        <li><a href="termsofservice.html" class="hover:text-primary transition-colors">Terms of Service</a></li>
+                        <li><a href="policyprivacy.html" class="hover:text-primary transition-colors">Privacy Policy</a></li>
+
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold neumorph-text-dark mb-4">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 neumorph-inner rounded-xl flex items-center justify-center hover:bg-primary hover:text-white transition-all">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 neumorph-inner rounded-xl flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 neumorph-inner rounded-xl flex items-center justify-center hover:bg-blue-400 hover:text-white transition-all">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 neumorph-inner rounded-xl flex items-center justify-center hover:bg-red-600 hover:text-white transition-all">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 mt-8 pt-8 text-center neumorph-text text-sm">
+                <p>&copy; 2026 Sayuth  . All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="../index.js"></script>
+</body>
+</html>

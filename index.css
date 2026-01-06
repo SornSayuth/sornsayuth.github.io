@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Neumorphism Base Colors */
+:root {
+    --neumorph-bg: #e0e5ec;
+    --neumorph-light-shadow: 8px 8px 16px #c2c8d0;
+    --neumorph-dark-shadow: -8px -8px 16px #ffffff;
+    --neumorph-inner-light-shadow: inset 8px 8px 16px #c2c8d0;
+    --neumorph-inner-dark-shadow: inset -8px -8px 16px #ffffff;
+    --neumorph-text: #707070;
+    --neumorph-text-dark: #2b2d31;
+}
+
+/* Dark Mode Neumorphism */
+.dark-mode {
+    --neumorph-bg: #2b2d31;
+    --neumorph-light-shadow: 8px 8px 16px #1e2023;
+    --neumorph-dark-shadow: -8px -8px 16px #383b40;
+    --neumorph-inner-light-shadow: inset 8px 8px 16px #1e2023;
+    --neumorph-inner-dark-shadow: inset -8px -8px 16px #383b40;
+    --neumorph-text: #b0b3b8;
+    --neumorph-text-dark: #e0e5ec;
+}
+
+/* Neumorphism Classes */
+.neumorph-bg {
+    background-color: var(--neumorph-bg);
+}
+        
+.neumorph-card {
+    background-color: var(--neumorph-bg);
+    box-shadow: var(--neumorph-light-shadow), var(--neumorph-dark-shadow);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+        
+.neumorph-card:hover {
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+}
+        
+.neumorph-inner {
+    background-color: var(--neumorph-bg);
+    box-shadow: var(--neumorph-inner-light-shadow), var(--neumorph-inner-dark-shadow);
+    border-radius: 15px;
+}
+        
+.neumorph-button {
+    background-color: var(--neumorph-bg);
+    box-shadow: var(--neumorph-light-shadow), var(--neumorph-dark-shadow);
+    border: none;
+    border-radius: 15px;
+    padding: 16px 32px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+        
+.neumorph-button:active {
+    box-shadow: var(--neumorph-inner-light-shadow), var(--neumorph-inner-dark-shadow);
+    transform: translateY(2px);
+}
+        
+.neumorph-input {
+    background-color: var(--neumorph-bg);
+    box-shadow: var(--neumorph-inner-light-shadow), var(--neumorph-inner-dark-shadow);
+    border: none;
+    border-radius: 12px;
+    padding: 16px;
+    width: 100%;
+    font-size: 16px;
+    color: var(--neumorph-text-dark);
+}
+        
+.neumorph-input:focus {
+    outline: none;
+    box-shadow: inset 0 0 0 2px #6366f1, var(--neumorph-inner-light-shadow), var(--neumorph-inner-dark-shadow);
+}
+        
+.neumorph-text {
+    color: var(--neumorph-text);
+}
+        
+.neumorph-text-dark {
+    color: var(--neumorph-text-dark);
+}
+
+/* Custom Animations */
+.fade-in {
+    animation: fadeIn 1s ease-in;
+}
+        
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+        
+.slide-up {
+    animation: slideUp 0.8s ease-out;
+}
+        
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+        
+.skill-bar {
+    transition: width 1.5s ease-in-out;
+    height: 12px;
+    border-radius: 6px;
+    background-color: var(--neumorph-bg);
+    box-shadow: var(--neumorph-inner-light-shadow), var(--neumorph-inner-dark-shadow);
+}
+        
+.skill-fill {
+    height: 100%;
+    border-radius: 6px;
+    background: linear-gradient(90deg, #6366f1, #8b5cf6);
+    box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+}
+        
+::-webkit-scrollbar-track {
+    background: var(--neumorph-bg);
+}
+        
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(#6366f1, #8b5cf6);
+    border-radius: 6px;
+    border: 3px solid var(--neumorph-bg);
+}

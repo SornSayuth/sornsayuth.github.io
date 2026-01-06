@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sayuth | Android Developer & IT Specialist</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6366f1',
+                        secondary: '#8b5cf6',
+                        neumorph: '#e0e5ec',
+                        neumorphDark: '#2b2d31'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../index.css">
+</head>
+<body class="neumorph-bg text-gray-700 transition-colors duration-300">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 p-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <a href="#home" class="text-2xl font-bold neumorph-text-dark">
+                        <span class="text-primary">SAYUTH </span><span class="text-secondary">Dev <i class="fa-solid fa-code"></i></span>
+                    </a>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="../index.html#home" class="neumorph-text-dark font-medium hover:text-primary transition-colors">Home</a>
+                    <a href="../index.html#about" class="neumorph-text-dark font-medium hover:text-primary transition-colors">About</a>
+                    <a href="../index.html#projects" class="neumorph-text-dark font-medium hover:text-primary transition-colors">Projects</a>
+                    <a href="../index.html#skills" class="neumorph-text-dark font-medium hover:text-primary transition-colors">Skills</a>
+                    <a href="../index.html#contact" class="neumorph-text-dark font-medium hover:text-primary transition-colors">Contact</a>
+                    
+                    <button id="theme-toggle" class="neumorph-button flex items-center">
+                        <i class="fas fa-moon mr-2"></i>
+                        <span>Dark</span>
+                    </button>
+                </div>
+                
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="neumorph-button p-3">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden mt-4 neumorph-card mx-6 p-6">
+            <div class="flex flex-col space-y-4">
+                <a href="../index.html#home" class="neumorph-text-dark font-medium">Home</a>
+                <a href="../index.html#about" class="neumorph-text-dark font-medium">About</a>
+                <a href="../index.html#projects" class="neumorph-text-dark font-medium">Projects</a>
+                <a href="../index.html#skills" class="neumorph-text-dark font-medium">Skills</a>
+                <a href="../index.html#contact" class="neumorph-text-dark font-medium">Contact</a>
+                <button id="mobile-theme-toggle" class="neumorph-button w-full flex justify-center">
+                    <i class="fas fa-moon mr-2"></i>
+                    <span>Dark Mode</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <!-- Privacy Policy -->
+    <section id="privacy" class="py-20">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="neumorph-card p-8">
+                <h2 class="text-2xl md:text-3xl font-bold neumorph-text-dark mb-8 text-center">Privacy Policy</h2>
+                
+                <div class="space-y-6 neumorph-text leading-relaxed text-sm">
+                    <div>
+                        <h3 class="text-lg font-semibold neumorph-text-dark mb-3">1. Information Collection</h3>
+                        <p>We collect information that you provide directly to us when you fill out contact forms, respond to surveys, or communicate with us.</p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-lg font-semibold neumorph-text-dark mb-3">2. Information Use</h3>
+                        <p>We use the information we collect to:
+                            <ul class="list-disc pl-6 mt-2 space-y-1">
+                                <li>Respond to your inquiries and fulfill your requests</li>
+                                <li>Improve our website and services</li>
+                                <li>Send administrative information to you</li>
+                                <li>Protect against, identify, and prevent fraud and other unlawful activity</li>
+                            </ul>
+                        </p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-lg font-semibold neumorph-text-dark mb-3">3. Information Sharing</h3>
+                        <p>We do not sell, rent, or lease your personal information to third parties. We may share your information with service providers who perform services on our behalf, law enforcement agencies when required by law, and business partners with your consent.</p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-lg font-semibold neumorph-text-dark mb-3">4. Data Security</h3>
+                        <p>We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction.</p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-lg font-semibold neumorph-text-dark mb-3">5. Cookies and Tracking</h3>
+                        <p>Our website uses cookies and similar technologies to enhance your experience and analyze website traffic. You can control cookie settings through your browser.</p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-lg font-semibold neumorph-text-dark mb-3">6. Your Rights</h3>
+                        <p>You have the right to access, correct, delete, and object to the processing of your personal information.</p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-lg font-semibold neumorph-text-dark mb-3">7. Children's Privacy</h3>
+                        <p>Our website is not intended for children under the age of 13. We do not knowingly collect personal information from children under 13.</p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-lg font-semibold neumorph-text-dark mb-3">8. Changes to Privacy Policy</h3>
+                        <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.</p>
+                    </div>
+                </div>
+                
+                <div class="mt-8 pt-6 border-t border-gray-200 neumorph-text text-xs text-center">
+                    <p>Effective Date: January 2, 2026<br>Contact: privacy@Sayuth dev.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold neumorph-text-dark mb-4">
+                        <span class="text-primary">SAYUTH </span><span class="text-secondary">Dev <i class="fa-solid fa-code"></i></span>
+                    </h3>
+                    <p class="neumorph-text leading-relaxed text-sm">
+                        Professional Android development and IT solutions for businesses of all sizes.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-semibold neumorph-text-dark mb-4">Quick Links</h4>
+                    <ul class="space-y-2 neumorph-text text-sm">
+                        <li><a href="../index.html#home" class="hover:text-primary transition-colors">Home</a></li>
+                        <li><a href="../index.html#about" class="hover:text-primary transition-colors">About</a></li>
+                        <li><a href="../index.html#projects" class="hover:text-primary transition-colors">Projects</a></li>
+                        <li><a href="../index.html#contact" class="hover:text-primary transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold neumorph-text-dark mb-4">Legal</h4>
+                    <ul class="space-y-2 neumorph-text text-sm">
+                        <li><a href="termsofservice.html" class="hover:text-primary transition-colors">Terms of Service</a></li>
+                        <li><a href="policyprivacy.html" class="hover:text-primary transition-colors">Privacy Policy</a></li>
+                    
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold neumorph-text-dark mb-4">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 neumorph-inner rounded-xl flex items-center justify-center hover:bg-primary hover:text-white transition-all">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 neumorph-inner rounded-xl flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 neumorph-inner rounded-xl flex items-center justify-center hover:bg-blue-400 hover:text-white transition-all">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 neumorph-inner rounded-xl flex items-center justify-center hover:bg-red-600 hover:text-white transition-all">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 mt-8 pt-8 text-center neumorph-text text-sm">
+                <p>&copy; 2026 Sayuth  . All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="../index.js"></script>
+</body>
+</html>
