@@ -1,606 +1,903 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sayuth | Android Developer & IT Specialist</title>
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#6366f1',
-                        secondary: '#8b5cf6',
-                        neumorph: '#e0e5ec',
-                        neumorphDark: '#2b2d31'
-                    }
-                }
-            }
-        }
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#6366f1",
+              secondary: "#8b5cf6",
+              neumorph: "#e0e5ec",
+              neumorphDark: "#2b2d31",
+            },
+          },
+        },
+      };
     </script>
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="index.css">
-</head>
-<body class="neumorph-bg text-gray-700 transition-colors duration-300">
-
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body class="neumorph-bg text-gray-700 transition-colors duration-300">
     <!-- Navigation -->
     <nav class="fixed top-0 w-full z-50 p-6">
-        <div class="max-w-7xl mx-auto">
-            <div class="flex justify-between items-center">
-                <div class="flex items-center">
-                    <a href="#home" class="text-2xl font-bold neumorph-text-dark">
-                        <span class="text-primary">SAYUTH </span><span class="text-secondary">Dev <i class="fa-solid fa-code"></i></span>
-                    </a>
-                </div>
-                
-                <div class="hidden md:flex items-center space-x-6">
-                    <a href="#home" class="neumorph-text-dark font-medium hover:text-primary transition-colors">Home</a>
-                    <a href="#about" class="neumorph-text-dark font-medium hover:text-primary transition-colors">About</a>
-                    <a href="#projects" class="neumorph-text-dark font-medium hover:text-primary transition-colors">Projects</a>
-                    <a href="#skills" class="neumorph-text-dark font-medium hover:text-primary transition-colors">Skills</a>
-                    <a href="#contact" class="neumorph-text-dark font-medium hover:text-primary transition-colors">Contact</a>
-                    
-                    <button id="theme-toggle" class="neumorph-button flex items-center">
-                        <i class="fas fa-moon mr-2"></i>
-                        <span>Dark</span>
-                    </button>
-                </div>
-                
-                <div class="md:hidden">
-                    <button id="mobile-menu-button" class="neumorph-button p-3">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                </div>
-            </div>
+      <div class="max-w-7xl mx-auto">
+        <div class="flex justify-between items-center">
+          <div class="flex items-center">
+            <a href="#home" class="text-2xl font-bold neumorph-text-dark">
+              <span class="text-primary">SAYUTH </span
+              ><span class="text-secondary"
+                >Dev <i class="fa-solid fa-code"></i
+              ></span>
+            </a>
+          </div>
+
+          <div class="hidden md:flex items-center space-x-6">
+            <a
+              href="#home"
+              class="neumorph-text-dark font-medium hover:text-primary transition-colors"
+              >Home</a
+            >
+            <a
+              href="#about"
+              class="neumorph-text-dark font-medium hover:text-primary transition-colors"
+              >About</a
+            >
+            <a
+              href="#projects"
+              class="neumorph-text-dark font-medium hover:text-primary transition-colors"
+              >Projects</a
+            >
+            <a
+              href="#skills"
+              class="neumorph-text-dark font-medium hover:text-primary transition-colors"
+              >Skills</a
+            >
+            <a
+              href="#contact"
+              class="neumorph-text-dark font-medium hover:text-primary transition-colors"
+              >Contact</a
+            >
+
+            <button id="theme-toggle" class="neumorph-button flex items-center">
+              <i class="fas fa-moon mr-2"></i>
+              <span>Dark</span>
+            </button>
+          </div>
+
+          <div class="md:hidden">
+            <button id="mobile-menu-button" class="neumorph-button p-3">
+              <i class="fas fa-bars"></i>
+            </button>
+          </div>
         </div>
-        
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden mt-4 neumorph-card mx-6 p-6">
-            <div class="flex flex-col space-y-4">
-                <a href="#home" class="neumorph-text-dark font-medium">Home</a>
-                <a href="#about" class="neumorph-text-dark font-medium">About</a>
-                <a href="#projects" class="neumorph-text-dark font-medium">Projects</a>
-                <a href="#skills" class="neumorph-text-dark font-medium">Skills</a>
-                <a href="#contact" class="neumorph-text-dark font-medium">Contact</a>
-                <button id="mobile-theme-toggle" class="neumorph-button w-full flex justify-center">
-                    <i class="fas fa-moon mr-2"></i>
-                    <span>Dark Mode</span>
-                </button>
-            </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden mt-4 neumorph-card mx-6 p-6"
+      >
+        <div class="flex flex-col space-y-4">
+          <a href="#home" class="neumorph-text-dark font-medium">Home</a>
+          <a href="#about" class="neumorph-text-dark font-medium">About</a>
+          <a href="#projects" class="neumorph-text-dark font-medium"
+            >Projects</a
+          >
+          <a href="#skills" class="neumorph-text-dark font-medium">Skills</a>
+          <a href="#contact" class="neumorph-text-dark font-medium">Contact</a>
+          <button
+            id="mobile-theme-toggle"
+            class="neumorph-button w-full flex justify-center"
+          >
+            <i class="fas fa-moon mr-2"></i>
+            <span>Dark Mode</span>
+          </button>
         </div>
+      </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="home" class="pt-32 min-h-screen flex items-center">
-        <div class="max-w-7xl mx-auto px-6 py-20">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div class="fade-in">
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold neumorph-text-dark mb-6 leading-tight">
-                        Hi, I'm <span class="text-primary">Sayuth</span>
-                    </h1>
-                    <h2 class="text-xl md:text-2xl neumorph-text mb-8">
-                        Android Developer & IT Solutions Specialist
-                    </h2>
-                    <p class="text-lg neumorph-text mb-8 max-w-2xl leading-relaxed">
-                        I craft innovative Android applications and provide comprehensive IT solutions that help businesses thrive in the digital age with modern, user-friendly interfaces.
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="#projects" class="neumorph-button bg-gradient-to-r from-primary to-secondary text-white hover:shadow-lg transition-all">
-                            <span>View My Work</span>
-                        </a>
-                        <a href="#contact" class="neumorph-button border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all">
-                            <span>Get In Touch</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="fade-in">
-                    <div class="relative">
-                        <div class="neumorph-card p-2 mx-auto w-80 h-80 rounded-2xl">
-                            <div class="w-full h-full rounded-xl overflow-hidden">
-                                <div class="bg-gray-200 border-2 border-dashed w-full h-full flex items-center justify-center">
-                                    <img src="./image/logo.JPG" alt="">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="absolute -bottom-6 -right-6 neumorph-card px-6 py-4 rounded-2xl">
-                            <div class="flex items-center">
-                                <div class="w-10 h-10 neumorph-inner rounded-xl flex items-center justify-center mr-3">
-                                    <i class="fab fa-android text-primary text-xl"></i>
-                                </div>
-                                <div>
-                                    <div class="font-semibold neumorph-text-dark">1+ Years</div>
-                                    <div class="text-sm neumorph-text">Experience</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      <div class="max-w-7xl mx-auto px-6 py-20">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div class="fade-in">
+            <h1
+              class="text-4xl md:text-5xl lg:text-6xl font-bold neumorph-text-dark mb-6 leading-tight"
+            >
+              Hi, I'm <span class="text-primary">Sayuth</span>
+            </h1>
+            <h2 class="text-xl md:text-2xl neumorph-text mb-8">
+              Android Developer & IT Solutions Specialist
+            </h2>
+            <p class="text-lg neumorph-text mb-8 max-w-2xl leading-relaxed">
+              I craft innovative Android applications and provide comprehensive
+              IT solutions that help businesses thrive in the digital age with
+              modern, user-friendly interfaces.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a
+                href="#projects"
+                class="neumorph-button bg-gradient-to-r from-primary to-secondary text-white hover:shadow-lg transition-all"
+              >
+                <span>View My Work</span>
+              </a>
+              <a
+                href="#contact"
+                class="neumorph-button border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all"
+              >
+                <span>Get In Touch</span>
+              </a>
             </div>
+          </div>
+          <div class="fade-in">
+            <div class="relative">
+              <div class="neumorph-card p-2 mx-auto w-80 h-80 rounded-2xl">
+                <div class="w-full h-full rounded-xl overflow-hidden">
+                  <div
+                    class="bg-gray-200 border-2 border-dashed w-full h-full flex items-center justify-center"
+                  >
+                    <img src="./image/logo.JPG" alt="" />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="absolute -bottom-6 -right-6 neumorph-card px-6 py-4 rounded-2xl"
+              >
+                <div class="flex items-center">
+                  <div
+                    class="w-10 h-10 neumorph-inner rounded-xl flex items-center justify-center mr-3"
+                  >
+                    <i class="fab fa-android text-primary text-xl"></i>
+                  </div>
+                  <div>
+                    <div class="font-semibold neumorph-text-dark">1+ Years</div>
+                    <div class="text-sm neumorph-text">Experience</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="py-20">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold neumorph-text-dark mb-4">About Me</h2>
-                <div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
-            </div>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                <div class="slide-up">
-                    <div class="neumorph-card p-8">
-                        <h3 class="text-2xl font-semibold neumorph-text-dark mb-6">Who I Am</h3>
-                        <p class="neumorph-text mb-6 leading-relaxed">
-                            I'm a passionate Android developer and IT specialist with over 5 years of experience creating mobile applications and managing enterprise IT infrastructure.
-                        </p>
-                        <p class="neumorph-text mb-8 leading-relaxed">
-                            My expertise lies in developing user-centric Android apps using Kotlin and Java, while also providing comprehensive IT solutions for businesses of all sizes.
-                        </p>
-                        
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div class="neumorph-inner p-6">
-                                <h4 class="font-semibold neumorph-text-dark mb-2">Education</h4>
-                                <p class="neumorph-text text-sm">BSc Computer Science<br>Stanford University</p>
-                            </div>
-                            <div class="neumorph-inner p-6">
-                                <h4 class="font-semibold neumorph-text-dark mb-2">Certifications</h4>
-                                <p class="neumorph-text text-sm">Google Android Dev<br>AWS Solutions Architect</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="slide-up">
-                    <div class="neumorph-card p-8">
-                        <h3 class="text-xl font-semibold neumorph-text-dark mb-6">What I Do</h3>
-                        <div class="space-y-5">
-                            <div class="flex items-start">
-                                <div class="w-12 h-12 neumorph-inner rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
-                                    <i class="fas fa-mobile-alt text-primary text-lg"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold neumorph-text-dark">Android Development</h4>
-                                    <p class="neumorph-text text-sm">Custom mobile applications using Kotlin, Java, Jetpack Compose</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <div class="w-12 h-12 neumorph-inner rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
-                                    <i class="fas fa-server text-secondary text-lg"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold neumorph-text-dark">IT Infrastructure</h4>
-                                    <p class="neumorph-text text-sm">Network setup, cloud migrations, system administration</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <div class="w-12 h-12 neumorph-inner rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
-                                    <i class="fas fa-lock text-primary text-lg"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold neumorph-text-dark">Cybersecurity</h4>
-                                    <p class="neumorph-text text-sm">Security audits, vulnerability assessments, compliance</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <div class="w-12 h-12 neumorph-inner rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
-                                    <i class="fas fa-chart-line text-secondary text-lg"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold neumorph-text-dark">Consulting</h4>
-                                    <p class="neumorph-text text-sm">IT strategy, digital transformation, technical guidance</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold neumorph-text-dark mb-4">
+            About Me
+          </h2>
+          <div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
         </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div class="slide-up">
+            <div class="neumorph-card p-8">
+              <h3 class="text-2xl font-semibold neumorph-text-dark mb-6">
+                Who I Am
+              </h3>
+              <p class="neumorph-text mb-6 leading-relaxed">
+                I'm a passionate Android developer and IT specialist with over 5
+                years of experience creating mobile applications and managing
+                enterprise IT infrastructure.
+              </p>
+              <p class="neumorph-text mb-8 leading-relaxed">
+                My expertise lies in developing user-centric Android apps using
+                Kotlin and Java, while also providing comprehensive IT solutions
+                for businesses of all sizes.
+              </p>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="neumorph-inner p-6">
+                  <h4 class="font-semibold neumorph-text-dark mb-2">
+                    Education
+                  </h4>
+                  <p class="neumorph-text text-sm">
+                    BSc Computer Science<br />Stanford University
+                  </p>
+                </div>
+                <div class="neumorph-inner p-6">
+                  <h4 class="font-semibold neumorph-text-dark mb-2">
+                    Certifications
+                  </h4>
+                  <p class="neumorph-text text-sm">
+                    Google Android Dev<br />AWS Solutions Architect
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="slide-up">
+            <div class="neumorph-card p-8">
+              <h3 class="text-xl font-semibold neumorph-text-dark mb-6">
+                What I Do
+              </h3>
+              <div class="space-y-5">
+                <div class="flex items-start">
+                  <div
+                    class="w-12 h-12 neumorph-inner rounded-xl flex items-center justify-center mr-4 flex-shrink-0"
+                  >
+                    <i class="fas fa-mobile-alt text-primary text-lg"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold neumorph-text-dark">
+                      Android Development
+                    </h4>
+                    <p class="neumorph-text text-sm">
+                      Custom mobile applications using Kotlin, Java, Jetpack
+                      Compose
+                    </p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <div
+                    class="w-12 h-12 neumorph-inner rounded-xl flex items-center justify-center mr-4 flex-shrink-0"
+                  >
+                    <i class="fas fa-server text-secondary text-lg"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold neumorph-text-dark">
+                      IT Infrastructure
+                    </h4>
+                    <p class="neumorph-text text-sm">
+                      Network setup, cloud migrations, system administration
+                    </p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <div
+                    class="w-12 h-12 neumorph-inner rounded-xl flex items-center justify-center mr-4 flex-shrink-0"
+                  >
+                    <i class="fas fa-lock text-primary text-lg"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold neumorph-text-dark">
+                      Cybersecurity
+                    </h4>
+                    <p class="neumorph-text text-sm">
+                      Security audits, vulnerability assessments, compliance
+                    </p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <div
+                    class="w-12 h-12 neumorph-inner rounded-xl flex items-center justify-center mr-4 flex-shrink-0"
+                  >
+                    <i class="fas fa-chart-line text-secondary text-lg"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold neumorph-text-dark">Consulting</h4>
+                    <p class="neumorph-text text-sm">
+                      IT strategy, digital transformation, technical guidance
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Projects Section -->
     <section id="projects" class="py-20">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold neumorph-text-dark mb-4">Featured Projects</h2>
-                <p class="text-lg neumorph-text max-w-3xl mx-auto">Here are some of my recent projects showcasing Android development and IT solutions</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project 1 -->
-                <div class="neumorph-card overflow-hidden transition-all hover:shadow-xl">
-                    <div class="h-48 bg-gradient-to-r from-primary to-secondary flex items-center justify-center">
-                        <div class="text-white text-center">
-                            <i class="fas fa-shopping-cart text-4xl mb-3"></i>
-                            <h3 class="text-xl font-bold">E-Commerce App</h3>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center text-sm neumorph-text mb-3">
-                            <i class="fas fa-android mr-2 text-primary"></i>
-                            <span>Android App</span>
-                        </div>
-                        <p class="neumorph-text mb-4 text-sm">
-                            A full-featured e-commerce mobile application with real-time inventory management, payment integration, and push notifications.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="neumorph-inner px-3 py-1 rounded-full text-xs neumorph-text-dark">Kotlin</span>
-                            <span class="neumorph-inner px-3 py-1 rounded-full text-xs neumorph-text-dark">Jetpack Compose</span>
-                            <span class="neumorph-inner px-3 py-1 rounded-full text-xs neumorph-text-dark">Firebase</span>
-                        </div>
-                        <a href="#" class="neumorph-button w-full text-primary font-medium hover:bg-primary hover:text-white transition-all">
-                            <span>View Details</span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="neumorph-card overflow-hidden transition-all hover:shadow-xl">
-                    <div class="h-48 bg-gradient-to-r from-secondary to-primary flex items-center justify-center">
-                        <div class="text-white text-center">
-                            <i class="fas fa-hospital text-4xl mb-3"></i>
-                            <h3 class="text-xl font-bold">Healthcare Portal</h3>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center text-sm neumorph-text mb-3">
-                            <i class="fas fa-laptop-code mr-2 text-secondary"></i>
-                            <span>IT Solution</span>
-                        </div>
-                        <p class="neumorph-text mb-4 text-sm">
-                            Enterprise healthcare management system with HIPAA compliance, secure patient data management, and telemedicine integration.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="neumorph-inner px-3 py-1 rounded-full text-xs neumorph-text-dark">AWS</span>
-                            <span class="neumorph-inner px-3 py-1 rounded-full text-xs neumorph-text-dark">Docker</span>
-                            <span class="neumorph-inner px-3 py-1 rounded-full text-xs neumorph-text-dark">React</span>
-                        </div>
-                        <a href="#" class="neumorph-button w-full text-primary font-medium hover:bg-primary hover:text-white transition-all">
-                            <span>View Details</span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="neumorph-card overflow-hidden transition-all hover:shadow-xl">
-                    <div class="h-48 bg-gradient-to-r from-primary to-secondary flex items-center justify-center">
-                        <div class="text-white text-center">
-                            <i class="fas fa-graduation-cap text-4xl mb-3"></i>
-                            <h3 class="text-xl font-bold">Learning Platform</h3>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center text-sm neumorph-text mb-3">
-                            <i class="fas fa-android mr-2 text-primary"></i>
-                            <span>Android App</span>
-                        </div>
-                        <p class="neumorph-text mb-4 text-sm">
-                            Interactive learning mobile app with gamified content, offline capabilities, and personalized learning paths.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="neumorph-inner px-3 py-1 rounded-full text-xs neumorph-text-dark">Java</span>
-                            <span class="neumorph-inner px-3 py-1 rounded-full text-xs neumorph-text-dark">Room DB</span>
-                            <span class="neumorph-inner px-3 py-1 rounded-full text-xs neumorph-text-dark">Retrofit</span>
-                        </div>
-                        <a href="#" class="neumorph-button w-full text-primary font-medium hover:bg-primary hover:text-white transition-all">
-                            <span>View Details</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold neumorph-text-dark mb-4">
+            Featured Projects
+          </h2>
+          <p class="text-lg neumorph-text max-w-3xl mx-auto">
+            Here are some of my recent projects showcasing Android development
+            and IT solutions
+          </p>
         </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Project 1 -->
+          <div
+            class="neumorph-card overflow-hidden transition-all hover:shadow-xl"
+          >
+            <div
+              class="h-48 bg-gradient-to-r from-primary to-secondary flex items-center justify-center"
+            >
+              <div class="text-white text-center">
+                <i class="fas fa-shopping-cart text-4xl mb-3"></i>
+                <h3 class="text-xl font-bold">E-Commerce App</h3>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center text-sm neumorph-text mb-3">
+                <i class="fas fa-android mr-2 text-primary"></i>
+                <span>Android App</span>
+              </div>
+              <p class="neumorph-text mb-4 text-sm">
+                A full-featured e-commerce mobile application with real-time
+                inventory management, payment integration, and push
+                notifications.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="neumorph-inner px-3 py-1 rounded-full text-xs neumorph-text-dark"
+                  >Kotlin</span
+                >
+                <span
+                  class="neumorph-inner px-3 py-1 rounded-full text-xs neumorph-text-dark"
+                  >Jetpack Compose</span
+                >
+                <span
+                  class="neumorph-inner px-3 py-1 rounded-full text-xs neumorph-text-dark"
+                  >Firebase</span
+                >
+              </div>
+              <a
+                href="#"
+                class="neumorph-button w-full text-primary font-medium hover:bg-primary hover:text-white transition-all"
+              >
+                <span>View Details</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div
+            class="neumorph-card overflow-hidden transition-all hover:shadow-xl"
+          >
+            <div
+              class="h-48 bg-gradient-to-r from-secondary to-primary flex items-center justify-center"
+            >
+              <div class="text-white text-center">
+                <i class="fas fa-hospital text-4xl mb-3"></i>
+                <h3 class="text-xl font-bold">Healthcare Portal</h3>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center text-sm neumorph-text mb-3">
+                <i class="fas fa-laptop-code mr-2 text-secondary"></i>
+                <span>IT Solution</span>
+              </div>
+              <p class="neumorph-text mb-4 text-sm">
+                Enterprise healthcare management system with HIPAA compliance,
+                secure patient data management, and telemedicine integration.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="neumorph-inner px-3 py-1 rounded-full text-xs neumorph-text-dark"
+                  >AWS</span
+                >
+                <span
+                  class="neumorph-inner px-3 py-1 rounded-full text-xs neumorph-text-dark"
+                  >Docker</span
+                >
+                <span
+                  class="neumorph-inner px-3 py-1 rounded-full text-xs neumorph-text-dark"
+                  >React</span
+                >
+              </div>
+              <a
+                href="#"
+                class="neumorph-button w-full text-primary font-medium hover:bg-primary hover:text-white transition-all"
+              >
+                <span>View Details</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div
+            class="neumorph-card overflow-hidden transition-all hover:shadow-xl"
+          >
+            <div
+              class="h-48 bg-gradient-to-r from-primary to-secondary flex items-center justify-center"
+            >
+              <div class="text-white text-center">
+                <i class="fas fa-graduation-cap text-4xl mb-3"></i>
+                <h3 class="text-xl font-bold">Learning Platform</h3>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center text-sm neumorph-text mb-3">
+                <i class="fas fa-android mr-2 text-primary"></i>
+                <span>Android App</span>
+              </div>
+              <p class="neumorph-text mb-4 text-sm">
+                Interactive learning mobile app with gamified content, offline
+                capabilities, and personalized learning paths.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="neumorph-inner px-3 py-1 rounded-full text-xs neumorph-text-dark"
+                  >Java</span
+                >
+                <span
+                  class="neumorph-inner px-3 py-1 rounded-full text-xs neumorph-text-dark"
+                  >Room DB</span
+                >
+                <span
+                  class="neumorph-inner px-3 py-1 rounded-full text-xs neumorph-text-dark"
+                  >Retrofit</span
+                >
+              </div>
+              <a
+                href="#"
+                class="neumorph-button w-full text-primary font-medium hover:bg-primary hover:text-white transition-all"
+              >
+                <span>View Details</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Skills Section -->
     <section id="skills" class="py-20">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold neumorph-text-dark mb-4">Technical Skills</h2>
-                <p class="text-lg neumorph-text">Proficiency in modern technologies and frameworks</p>
-            </div>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                <!-- Technical Skills -->
-                <div class="neumorph-card p-8">
-                    <h3 class="text-xl font-semibold neumorph-text-dark mb-8 text-center">Development & Programming</h3>
-                    <div class="space-y-6">
-                        <div>
-                            <div class="flex justify-between mb-3">
-                                <span class="font-medium neumorph-text-dark">Kotlin</span>
-                                <span class="neumorph-text">95%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-fill" style="width: 95%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-3">
-                                <span class="font-medium neumorph-text-dark">Java</span>
-                                <span class="neumorph-text">90%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-fill" style="width: 90%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-3">
-                                <span class="font-medium neumorph-text-dark">Jetpack Compose</span>
-                                <span class="neumorph-text">85%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-fill" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-3">
-                                <span class="font-medium neumorph-text-dark">Android SDK</span>
-                                <span class="neumorph-text">95%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-fill" style="width: 95%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-3">
-                                <span class="font-medium neumorph-text-dark">Firebase</span>
-                                <span class="neumorph-text">80%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-fill" style="width: 80%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- IT Skills -->
-                <div class="neumorph-card p-8">
-                    <h3 class="text-xl font-semibold neumorph-text-dark mb-8 text-center">IT & Infrastructure</h3>
-                    <div class="space-y-6">
-                        <div>
-                            <div class="flex justify-between mb-3">
-                                <span class="font-medium neumorph-text-dark">AWS Cloud</span>
-                                <span class="neumorph-text">85%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-fill" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-3">
-                                <span class="font-medium neumorph-text-dark">Network Security</span>
-                                <span class="neumorph-text">80%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-fill" style="width: 80%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-3">
-                                <span class="font-medium neumorph-text-dark">Linux Administration</span>
-                                <span class="neumorph-text">75%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-fill" style="width: 75%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-3">
-                                <span class="font-medium neumorph-text-dark">Docker & Kubernetes</span>
-                                <span class="neumorph-text">70%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-fill" style="width: 70%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-3">
-                                <span class="font-medium neumorph-text-dark">CI/CD Pipelines</span>
-                                <span class="neumorph-text">85%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-fill" style="width: 85%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="mt-16">
-                <h3 class="text-xl font-semibold neumorph-text-dark mb-8 text-center">Tools & Technologies</h3>
-                <div class="flex flex-wrap justify-center gap-6">
-                    <div class="text-center">
-                        <div class="w-16 h-16 neumorph-inner rounded-2xl flex items-center justify-center mx-auto mb-3">
-                            <i class="fab fa-android text-primary text-xl"></i>
-                        </div>
-                        <span class="neumorph-text">Android Studio</span>
-                    </div>
-                    <div class="text-center">
-                        <div class="w-16 h-16 neumorph-inner rounded-2xl flex items-center justify-center mx-auto mb-3">
-                            <i class="fab fa-git-alt text-secondary text-xl"></i>
-                        </div>
-                        <span class="neumorph-text">Git</span>
-                    </div>
-                    <div class="text-center">
-                        <div class="w-16 h-16 neumorph-inner rounded-2xl flex items-center justify-center mx-auto mb-3">
-                            <i class="fab fa-aws text-orange-500 text-xl"></i>
-                        </div>
-                        <span class="neumorph-text">AWS</span>
-                    </div>
-                    <div class="text-center">
-                        <div class="w-16 h-16 neumorph-inner rounded-2xl flex items-center justify-center mx-auto mb-3">
-                            <i class="fab fa-docker text-blue-500 text-xl"></i>
-                        </div>
-                        <span class="neumorph-text">Docker</span>
-                    </div>
-                    <div class="text-center">
-                        <div class="w-16 h-16 neumorph-inner rounded-2xl flex items-center justify-center mx-auto mb-3">
-                            <i class="fas fa-database text-green-500 text-xl"></i>
-                        </div>
-                        <span class="neumorph-text">SQL/NoSQL</span>
-                    </div>
-                    <div class="text-center">
-                        <div class="w-16 h-16 neumorph-inner rounded-2xl flex items-center justify-center mx-auto mb-3">
-                            <i class="fas fa-chart-line text-purple-500 text-xl"></i>
-                        </div>
-                        <span class="neumorph-text">Analytics</span>
-                    </div>
-                </div>
-            </div>
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold neumorph-text-dark mb-4">
+            Technical Skills
+          </h2>
+          <p class="text-lg neumorph-text">
+            Proficiency in modern technologies and frameworks
+          </p>
         </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <!-- Technical Skills -->
+          <div class="neumorph-card p-8">
+            <h3
+              class="text-xl font-semibold neumorph-text-dark mb-8 text-center"
+            >
+              Development & Programming
+            </h3>
+            <div class="space-y-6">
+              <div>
+                <div class="flex justify-between mb-3">
+                  <span class="font-medium neumorph-text-dark">Kotlin</span>
+                  <span class="neumorph-text">95%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-fill" style="width: 95%"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-3">
+                  <span class="font-medium neumorph-text-dark">Java</span>
+                  <span class="neumorph-text">90%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-fill" style="width: 90%"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-3">
+                  <span class="font-medium neumorph-text-dark"
+                    >Jetpack Compose</span
+                  >
+                  <span class="neumorph-text">85%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-fill" style="width: 85%"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-3">
+                  <span class="font-medium neumorph-text-dark"
+                    >Android SDK</span
+                  >
+                  <span class="neumorph-text">95%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-fill" style="width: 95%"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-3">
+                  <span class="font-medium neumorph-text-dark">Firebase</span>
+                  <span class="neumorph-text">80%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-fill" style="width: 80%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- IT Skills -->
+          <div class="neumorph-card p-8">
+            <h3
+              class="text-xl font-semibold neumorph-text-dark mb-8 text-center"
+            >
+              IT & Infrastructure
+            </h3>
+            <div class="space-y-6">
+              <div>
+                <div class="flex justify-between mb-3">
+                  <span class="font-medium neumorph-text-dark">AWS Cloud</span>
+                  <span class="neumorph-text">85%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-fill" style="width: 85%"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-3">
+                  <span class="font-medium neumorph-text-dark"
+                    >Network Security</span
+                  >
+                  <span class="neumorph-text">80%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-fill" style="width: 80%"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-3">
+                  <span class="font-medium neumorph-text-dark"
+                    >Linux Administration</span
+                  >
+                  <span class="neumorph-text">75%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-fill" style="width: 75%"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-3">
+                  <span class="font-medium neumorph-text-dark"
+                    >Docker & Kubernetes</span
+                  >
+                  <span class="neumorph-text">70%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-fill" style="width: 70%"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-3">
+                  <span class="font-medium neumorph-text-dark"
+                    >CI/CD Pipelines</span
+                  >
+                  <span class="neumorph-text">85%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-fill" style="width: 85%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-16">
+          <h3 class="text-xl font-semibold neumorph-text-dark mb-8 text-center">
+            Tools & Technologies
+          </h3>
+          <div class="flex flex-wrap justify-center gap-6">
+            <div class="text-center">
+              <div
+                class="w-16 h-16 neumorph-inner rounded-2xl flex items-center justify-center mx-auto mb-3"
+              >
+                <i class="fab fa-android text-primary text-xl"></i>
+              </div>
+              <span class="neumorph-text">Android Studio</span>
+            </div>
+            <div class="text-center">
+              <div
+                class="w-16 h-16 neumorph-inner rounded-2xl flex items-center justify-center mx-auto mb-3"
+              >
+                <i class="fab fa-git-alt text-secondary text-xl"></i>
+              </div>
+              <span class="neumorph-text">Git</span>
+            </div>
+            <div class="text-center">
+              <div
+                class="w-16 h-16 neumorph-inner rounded-2xl flex items-center justify-center mx-auto mb-3"
+              >
+                <i class="fab fa-aws text-orange-500 text-xl"></i>
+              </div>
+              <span class="neumorph-text">AWS</span>
+            </div>
+            <div class="text-center">
+              <div
+                class="w-16 h-16 neumorph-inner rounded-2xl flex items-center justify-center mx-auto mb-3"
+              >
+                <i class="fab fa-docker text-blue-500 text-xl"></i>
+              </div>
+              <span class="neumorph-text">Docker</span>
+            </div>
+            <div class="text-center">
+              <div
+                class="w-16 h-16 neumorph-inner rounded-2xl flex items-center justify-center mx-auto mb-3"
+              >
+                <i class="fas fa-database text-green-500 text-xl"></i>
+              </div>
+              <span class="neumorph-text">SQL/NoSQL</span>
+            </div>
+            <div class="text-center">
+              <div
+                class="w-16 h-16 neumorph-inner rounded-2xl flex items-center justify-center mx-auto mb-3"
+              >
+                <i class="fas fa-chart-line text-purple-500 text-xl"></i>
+              </div>
+              <span class="neumorph-text">Analytics</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="py-20">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold neumorph-text-dark mb-4">Get In Touch</h2>
-                <p class="text-lg neumorph-text">Have a project in mind or want to discuss collaboration opportunities?</p>
-            </div>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                <div class="slide-up">
-                    <div class="neumorph-card p-8">
-                        <h3 class="text-xl font-semibold neumorph-text-dark mb-6">Contact Information</h3>
-                        <div class="space-y-6">
-                            <div class="flex items-start">
-                                <div class="w-12 h-12 neumorph-inner rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
-                                    <i class="fas fa-map-marker-alt text-primary text-lg"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold neumorph-text-dark">Location</h4>
-                                    <p class="neumorph-text text-sm">San Francisco, CA</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <div class="w-12 h-12 neumorph-inner rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
-                                    <i class="fas fa-envelope text-secondary text-lg"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold neumorph-text-dark">Email</h4>
-                                    <p class="neumorph-text text-sm">Sayuth. @devmail.com</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <div class="w-12 h-12 neumorph-inner rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
-                                    <i class="fas fa-phone text-primary text-lg"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold neumorph-text-dark">Phone</h4>
-                                    <p class="neumorph-text text-sm">+1 (555) 123-4567</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <div class="w-12 h-12 neumorph-inner rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
-                                    <i class="fab fa-linkedin-in text-secondary text-lg"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold neumorph-text-dark">LinkedIn</h4>
-                                    <p class="neumorph-text text-sm">linkedin.com/in/Sayuth dev</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mt-8">
-                            <h4 class="font-semibold neumorph-text-dark mb-4">Working Hours</h4>
-                            <p class="neumorph-text text-sm">
-                                Monday - Friday: 9:00 AM - 6:00 PM<br>
-                                Saturday: 10:00 AM - 2:00 PM<br>
-                                Sunday: Closed
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="slide-up">
-                    <div class="neumorph-card p-8">
-                        <h3 class="text-xl font-semibold neumorph-text-dark mb-6">Send Me a Message</h3>
-                        <form id="contact-form" class="space-y-4">
-                            <div>
-                                <label for="name" class="block text-sm font-medium neumorph-text-dark mb-2">Full Name</label>
-                                <input type="text" id="name" required class="neumorph-input" placeholder="Enter your name">
-                            </div>
-                            <div>
-                                <label for="email" class="block text-sm font-medium neumorph-text-dark mb-2">Email Address</label>
-                                <input type="email" id="email" required class="neumorph-input" placeholder="Enter your email">
-                            </div>
-                            <div>
-                                <label for="subject" class="block text-sm font-medium neumorph-text-dark mb-2">Subject</label>
-                                <input type="text" id="subject" required class="neumorph-input" placeholder="Enter subject">
-                            </div>
-                            <div>
-                                <label for="message" class="block text-sm font-medium neumorph-text-dark mb-2">Message</label>
-                                <textarea id="message" rows="4" required class="neumorph-input" placeholder="Enter your message"></textarea>
-                            </div>
-                            <button type="submit" class="neumorph-button w-full bg-gradient-to-r from-primary to-secondary text-white font-medium hover:shadow-lg transition-all">
-                                <span>Send Message</span>
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold neumorph-text-dark mb-4">
+            Get In Touch
+          </h2>
+          <p class="text-lg neumorph-text">
+            Have a project in mind or want to discuss collaboration
+            opportunities?
+          </p>
         </div>
-    </section>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div class="slide-up">
+            <div class="neumorph-card p-8">
+              <h3 class="text-xl font-semibold neumorph-text-dark mb-6">
+                Contact Information
+              </h3>
+              <div class="space-y-6">
+                <div class="flex items-start">
+                  <div
+                    class="w-12 h-12 neumorph-inner rounded-xl flex items-center justify-center mr-4 flex-shrink-0"
+                  >
+                    <i class="fas fa-map-marker-alt text-primary text-lg"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold neumorph-text-dark">Location</h4>
+                    <p class="neumorph-text text-sm">San Francisco, CA</p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <div
+                    class="w-12 h-12 neumorph-inner rounded-xl flex items-center justify-center mr-4 flex-shrink-0"
+                  >
+                    <i class="fas fa-envelope text-secondary text-lg"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold neumorph-text-dark">Email</h4>
+                    <p class="neumorph-text text-sm">sornsayuth@gmail.com</p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <div
+                    class="w-12 h-12 neumorph-inner rounded-xl flex items-center justify-center mr-4 flex-shrink-0"
+                  >
+                    <i class="fas fa-phone text-primary text-lg"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold neumorph-text-dark">Phone</h4>
+                    <p class="neumorph-text text-sm">(+855) 11899656</p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <div
+                    class="w-12 h-12 neumorph-inner rounded-xl flex items-center justify-center mr-4 flex-shrink-0"
+                  >
+                    <i class="fab fa-linkedin-in text-secondary text-lg"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold neumorph-text-dark">LinkedIn</h4>
+                    <p class="neumorph-text text-sm">
+                      linkedin.com/in/Sayuth dev
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-8">
+                <h4 class="font-semibold neumorph-text-dark mb-4">
+                  Working Hours
+                </h4>
+                <p class="neumorph-text text-sm">
+                  Monday - Friday: 9:00 AM - 5:00 PM<br />
+                  Saturday: 9:00 AM - 12:00 PM<br />
+                  Sunday: Closed
+                </p>
+              </div>
+            </div>
+          </div>
 
+          <div class="slide-up">
+            <div class="neumorph-card p-8">
+              <h3 class="text-xl font-semibold neumorph-text-dark mb-6">
+                Send Me a Message
+              </h3>
+              <form id="contact-form" class="space-y-4">
+                <div>
+                  <label
+                    for="name"
+                    class="block text-sm font-medium neumorph-text-dark mb-2"
+                    >Full Name</label
+                  >
+                  <input
+                    type="text"
+                    id="name"
+                    required
+                    class="neumorph-input"
+                    placeholder="Enter your name"
+                  />
+                </div>
+                <div>
+                  <label
+                    for="email"
+                    class="block text-sm font-medium neumorph-text-dark mb-2"
+                    >Email Address</label
+                  >
+                  <input
+                    type="email"
+                    id="email"
+                    required
+                    class="neumorph-input"
+                    placeholder="Enter your email"
+                  />
+                </div>
+                <div>
+                  <label
+                    for="subject"
+                    class="block text-sm font-medium neumorph-text-dark mb-2"
+                    >Subject</label
+                  >
+                  <input
+                    type="text"
+                    id="subject"
+                    required
+                    class="neumorph-input"
+                    placeholder="Enter subject"
+                  />
+                </div>
+                <div>
+                  <label
+                    for="message"
+                    class="block text-sm font-medium neumorph-text-dark mb-2"
+                    >Message</label
+                  >
+                  <textarea
+                    id="message"
+                    rows="4"
+                    required
+                    class="neumorph-input"
+                    placeholder="Enter your message"
+                  ></textarea>
+                </div>
+                <button
+                  type="submit"
+                  class="neumorph-button w-full bg-gradient-to-r from-primary to-secondary text-white font-medium hover:shadow-lg transition-all"
+                >
+                  <span>Send Message</span>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Footer -->
     <footer class="py-12">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div>
-                    <h3 class="text-xl font-bold neumorph-text-dark mb-4">
-                        <span class="text-primary">Sayuth</span><span class="text-secondary">Dev</span>
-                    </h3>
-                    <p class="neumorph-text leading-relaxed text-sm">
-                        Professional Android development and IT solutions for businesses of all sizes.
-                    </p>
-                </div>
-                <div>
-                    <h4 class="font-semibold neumorph-text-dark mb-4">Quick Links</h4>
-                    <ul class="space-y-2 neumorph-text text-sm">
-                        <li><a href="#home" class="hover:text-primary transition-colors">Home</a></li>
-                        <li><a href="#about" class="hover:text-primary transition-colors">About</a></li>
-                        <li><a href="#projects" class="hover:text-primary transition-colors">Projects</a></li>
-                        <li><a href="#contact" class="hover:text-primary transition-colors">Contact</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-semibold neumorph-text-dark mb-4">Legal</h4>
-                    <ul class="space-y-2 neumorph-text text-sm">
-                        <li><a href="./page/termsofservice.html" class="hover:text-primary transition-colors">Terms of Service</a></li>
-                        <li><a href="./page/policyprivacy.html" class="hover:text-primary transition-colors">Privacy Policy</a></li>
-    
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-semibold neumorph-text-dark mb-4">Connect</h4>
-                    <div class="flex space-x-4">
-                        <a href="#" class="w-10 h-10 neumorph-inner rounded-xl flex items-center justify-center hover:bg-primary hover:text-white transition-all">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 neumorph-inner rounded-xl flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 neumorph-inner rounded-xl flex items-center justify-center hover:bg-blue-400 hover:text-white transition-all">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 neumorph-inner rounded-xl flex items-center justify-center hover:bg-red-600 hover:text-white transition-all">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                    </div>
-                </div>
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <h3 class="text-xl font-bold neumorph-text-dark mb-4">
+              <span class="text-primary">Sayuth</span
+              ><span class="text-secondary">Dev</span>
+            </h3>
+            <p class="neumorph-text leading-relaxed text-sm">
+              Professional Android development and IT solutions for businesses
+              of all sizes.
+            </p>
+          </div>
+          <div>
+            <h4 class="font-semibold neumorph-text-dark mb-4">Quick Links</h4>
+            <ul class="space-y-2 neumorph-text text-sm">
+              <li>
+                <a href="#home" class="hover:text-primary transition-colors"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a href="#about" class="hover:text-primary transition-colors"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a href="#projects" class="hover:text-primary transition-colors"
+                  >Projects</a
+                >
+              </li>
+              <li>
+                <a href="#contact" class="hover:text-primary transition-colors"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold neumorph-text-dark mb-4">Legal</h4>
+            <ul class="space-y-2 neumorph-text text-sm">
+              <li>
+                <a
+                  href="./page/termsofservice.html"
+                  class="hover:text-primary transition-colors"
+                  >Terms of Service</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./page/policyprivacy.html"
+                  class="hover:text-primary transition-colors"
+                  >Privacy Policy</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold neumorph-text-dark mb-4">Connect</h4>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="w-10 h-10 neumorph-inner rounded-xl flex items-center justify-center hover:bg-primary hover:text-white transition-all"
+              >
+                <i class="fab fa-github"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 neumorph-inner rounded-xl flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all"
+              >
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 neumorph-inner rounded-xl flex items-center justify-center hover:bg-blue-400 hover:text-white transition-all"
+              >
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 neumorph-inner rounded-xl flex items-center justify-center hover:bg-red-600 hover:text-white transition-all"
+              >
+                <i class="fab fa-youtube"></i>
+              </a>
             </div>
-            <div class="border-t border-gray-200 mt-8 pt-8 text-center neumorph-text text-sm">
-                <p>&copy; 2026 Sayuth  . All rights reserved.</p>
-            </div>
+          </div>
         </div>
+        <div
+          class="border-t border-gray-200 mt-8 pt-8 text-center neumorph-text text-sm"
+        >
+          <p>&copy; 2026 Sayuth . All rights reserved.</p>
+        </div>
+      </div>
     </footer>
 
     <!-- Custom JavaScript -->
     <script src="index.js"></script>
-</body>
+  </body>
 </html>
